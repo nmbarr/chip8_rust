@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 
-use std::usize;
-
 use rand::random;
 
 // Display contants used by the frontend
@@ -185,7 +183,7 @@ impl Emulator {
             }
 
             // SKIP VX == 0xNN
-            // If the value in the V register == 0xNN, skip forward and increment PC
+            // If the value in the VX register == 0xNN, skip forward and increment PC
             (3, _, _, _) => {
                 let x = digit2 as usize;
                 let nn = (op & 0xFF) as u8;
